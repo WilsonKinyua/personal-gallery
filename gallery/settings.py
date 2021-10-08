@@ -14,6 +14,7 @@ from pathlib import Path
 import os
 from decouple import config, Csv
 
+
 # cloudinary
 import cloudinary
 import cloudinary.uploader

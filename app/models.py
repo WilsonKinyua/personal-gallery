@@ -61,6 +61,7 @@ class Image(models.Model):
     def save_image(self):
         self.save()
 
+
     # update image
     def update_image(self, name, description, location, category):
         self.name = name
