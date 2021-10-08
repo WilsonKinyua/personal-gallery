@@ -21,6 +21,11 @@ a {
   height: 200px;
 }
 
+.modal img {
+  border: 1px solid rgb(214, 214, 214);
+  border-radius: 5px;
+}
+
 .text-underline {
   text-decoration: underline;
 }
