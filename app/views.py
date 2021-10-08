@@ -5,7 +5,9 @@ from .models import Image, Category, Location
 
 # index function to display all images
 def index(request):
-    images = Image.objects.all()
+    # get all images ordered by the most recent
+    images = Image.objects.all().order_by('-id')
+    # images = Image.objects.all()
     locations = Location.objects.all()
     categories = Category.objects.all()
     title = 'Homepage'
