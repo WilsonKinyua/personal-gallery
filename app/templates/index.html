@@ -11,7 +11,7 @@
           <div class="bg-white rounded shadow-sm"><img src="{{ photo.image.url }}" alt=""
               class="img-fluid card-img-top">
             <div class="p-4">
-              <h5 class="headings text-center"> <a href="#" class="text-dark text-capitalize">{{ photo.name }}</a></h5>
+              <h5 class="headings text-center"> <a href="" class="text-dark text-capitalize">{{ photo.name }}</a></h5>
               <div class="d-flex justify-content-between">
                 <div>
                   <small class="text-muted">
@@ -32,7 +32,7 @@
                   </p>
                 </a>
                 <div class="badge badge-danger px-3 rounded-pill font-weight-normal text-dark">
-                  {{photo.created_at|timesince}}
+                  {{photo.created_at|date}}
                 </div>
               </div>
             </div>

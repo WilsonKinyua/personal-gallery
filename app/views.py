@@ -28,9 +28,8 @@ def search(request):
         message = "You haven't searched for any term"
         return render(request, 'search.html', {"message": message, 'locations': locations})
 
+
 # display all images in a specific location
-
-
 def location(request, location_id):
     locations = Location.objects.all()
     images = Image.objects.filter(location_id=location_id)
@@ -38,3 +37,11 @@ def location(request, location_id):
     location = Location.objects.get(id=location_id)
     title = location
     return render(request, 'location.html', {'images': images, 'locations': locations, 'title': title})
+
+
+# display single image details
+def image(request, image_id):
+    locations = Location.objects.all()
+    image = Image.objects.get(id=image_id)
+    title = image
+    return render(request, 'image.html', {'image': image, 'locations': locations, 'title': title})
