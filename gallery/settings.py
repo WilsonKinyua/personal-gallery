@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+from decouple import config, Csv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,10 +30,11 @@ MEDIA_DIR = os.path.join(BASE_DIR, 'app', 'media')
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-)@qufkza&vz8k4(jddfl&yobuk#(7azenp1j)b)zg5%gj-@=l3'
+SECRET_KEY = config('SECRET_KEY', default='CHANGE_ME')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=True, cast=bool)
+# MODE=config("MODE", default="dev")
 
 ALLOWED_HOSTS = []
 
@@ -87,9 +89,9 @@ WSGI_APPLICATION = 'gallery.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'gallery',
-        'USER': 'developer',
-        'PASSWORD': 'developerwilson',
+        'NAME': config('DB_NAME', default='gallery'),
+        'USER': config('DB_USER', default='root'),
+        'PASSWORD': config('DB_PASSWORD', default='root'),
     }
 }
 
