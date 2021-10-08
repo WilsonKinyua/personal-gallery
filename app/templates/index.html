@@ -7,20 +7,20 @@
       <div class="row">
         {% for photo in images %}
         <!-- Gallery Photo item start -->
-        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+        <div class="col-xl-3 col-lg-4 col-md-12 mb-4">
           <div class="bg-white rounded shadow-sm"><img src="{{ photo.image.url }}" alt=""
               class="img-fluid card-img-top">
             <div class="p-4">
-              <h5 class="headings text-center"> <a href="#" class="text-dark">{{ photo.name }}</a></h5>
+              <h5 class="headings text-center"> <a href="#" class="text-dark text-capitalize">{{ photo.name }}</a></h5>
               <div class="d-flex justify-content-between">
                 <div>
                   <small class="text-muted">
-                    <span class="badge rounded-pill bg-info text-white">{{ photo.category }}</span>
+                    <span class="badge rounded-pill bg-info text-white text-capitalize">{{ photo.category }}</span>
                   </small>
                 </div>
                 <div>
                   <small class="text-muted">
-                    <span class="badge rounded-pill bg-dark text-white">{{ photo.location }}</span>
+                    <span class="badge rounded-pill bg-dark text-white text-capitalize">{{ photo.location }}</span>
                   </small>
                 </div>
               </div>
