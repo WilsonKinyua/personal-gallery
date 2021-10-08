@@ -24,7 +24,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'app', 'templates')
 STATIC_DIR = os.path.join(BASE_DIR, 'app', 'static')
 
 # MEDIA FILES DIRECTORY
-MEDIA_DIR = os.path.join(BASE_DIR, 'app', 'media')
+MEDIA_DIR = os.path.join(BASE_DIR, 'app', 'uploads')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
