@@ -80,21 +80,21 @@ class Image(models.Model):
 
     # get images by location
     @classmethod
-    def get_images_by_location(cls, location):
+    def filter_by_location(cls, location):
         images = Image.objects.filter(location__name=location)
         return images
 
     # get images by category
     @classmethod
-    def get_images_by_category(cls, category):
+    def filter_by_category(cls, category):
         images = Image.objects.filter(category__name=category)
         return images
 
-    # get images by date
-    # @classmethod
-    # def get_images_by_date(cls, date):
-    #     images = Image.objects.filter(created_at__date=date)
-    #     return images
+    # search images
+    @classmethod
+    def search_image(cls, search_term):
+        images = cls.objects.filter(name__icontains=search_term)
+        return images
 
     # delete image from database
     def delete_image(self):
