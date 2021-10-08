@@ -1,7 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda+One&display=swap');
 /* import bootstrap */
 @import url("../fonts/font-awesome.min.css");
 @import url("../fonts/ionicons.min.css");
 @import url("./responsive.css");
+
+.headings {
+  font-family: 'Merienda One', cursive;
+}
+
+a {
+  text-decoration: none;
+}
 /* gallery */
 .photo-gallery {
   margin-top: 30px;

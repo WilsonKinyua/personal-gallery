@@ -50,7 +50,7 @@ class Image(models.Model):
     description = models.TextField()
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='app/uploads/images/')
+    image = models.ImageField(upload_to='app/uploads/')
     created_at = models.DateTimeField(auto_now_add=True)
 
     # save image to database
