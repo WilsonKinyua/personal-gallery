@@ -17,7 +17,7 @@
                     <div class="bg-white rounded shadow-sm"><img src="{{ photo.image.url }}" alt=""
                             class="img-fluid card-img-top">
                         <div class="p-4">
-                            <h5 class="headings text-center"> <a href="" class="text-dark text-capitalize">
+                            <h5 class="headings text-center"> <a data-bs-toggle="modal" data-bs-target="#modalDisplayImageDetails{{photo.id}}" class="text-dark text-capitalize modal-click">
                                     {{ photo.name }}
                                 </a></h5>
                             <div class="d-flex justify-content-between">
@@ -38,7 +38,7 @@
                             </div>
                             <div
                                 class="d-flex align-items-center justify-content-between rounded-pill bg-warning px-3 py-2 mt-4">
-                                <a href="" class="text-dark">
+                                <a data-bs-toggle="modal" data-bs-target="#modalDisplayImageDetails{{photo.id}}" class="text-dark modal-click">
                                     <p class="small mb-0">
                                         View More
                                         <i class="fa fa-arrow-right"></i>

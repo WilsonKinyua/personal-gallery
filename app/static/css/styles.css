@@ -25,6 +25,10 @@ a {
   text-decoration: underline;
 }
 
+.modal-click:hover {
+  cursor:pointer;
+}
+
 /* on small device reduce image height */
 @media only screen and (min-width : 320px) {
   /* .card-img-top {
