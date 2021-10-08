@@ -3,6 +3,7 @@ from .models import Image, Category, Location
 # Create your views here.
 
 
+# index function to display all images
 def index(request):
     images = Image.objects.all()
     locations = Location.objects.all()
@@ -11,6 +12,7 @@ def index(request):
     return render(request, 'index.html', {'images': images, 'locations': locations, 'categories': categories, 'title': title})
 
 
+# search function to search for images
 def search(request):
     if 'category' in request.GET and request.GET["category"]:
         # change the search to be in lowercase
@@ -25,3 +27,14 @@ def search(request):
         locations = Location.objects.all()
         message = "You haven't searched for any term"
         return render(request, 'search.html', {"message": message, 'locations': locations})
+
+# display all images in a specific location
+
+
+def location(request, location_id):
+    locations = Location.objects.all()
+    images = Image.objects.filter(location_id=location_id)
+    # get the location name
+    location = Location.objects.get(id=location_id)
+    title = location
+    return render(request, 'location.html', {'images': images, 'locations': locations, 'title': title})
