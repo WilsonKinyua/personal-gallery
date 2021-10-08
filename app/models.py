@@ -2,7 +2,6 @@ from django.db import models
 import datetime as dt
 # Create your models here.
 
-
 # location model
 class Location(models.Model):
     name = models.CharField(max_length=50, unique=True)
