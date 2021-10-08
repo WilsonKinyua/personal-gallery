@@ -14,6 +14,11 @@ from pathlib import Path
 import os
 from decouple import config, Csv
 
+# cloudinary
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -35,6 +40,16 @@ SECRET_KEY = config('SECRET_KEY', default='CHANGE_ME')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
+
+# setup cloudinary credentials for django-cloudinary 
+cloudinary.config( 
+  cloud_name = config('CLOUDINARY_CLOUD_NAME'),
+  api_key = config('CLOUDINARY_API_KEY'),
+  api_secret = config('CLOUDINARY_API_SECRET'),
+  secure = True
+)
+
+
 # MODE=config("MODE", default="dev")
 
 ALLOWED_HOSTS = []
